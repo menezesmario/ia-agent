@@ -156,6 +156,7 @@ crew = Crew(
 # results= crew.kickoff(inputs={'ticket': 'NVDA'})
 
 
+
 with st.sidebar:
     st.header('Enter the Stock to Research')
 
@@ -167,9 +168,8 @@ if submit_button:
     if not topic:
         st.error("Please fill the ticket field")
     else:
-        results= crew.kickoff(inputs={'ticket': topic})
+        results = crew.kickoff(inputs={'ticket': topic})
 
         st.subheader("Results of your research:")
-        st.write(results['final_output']
-)
+        st.markdown(results['final_output'], unsafe_allow_html=True)
 
